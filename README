@@ -1,7 +1,7 @@
 Custom Linux Shell
 =================
 
-A lightweight, feature-rich Unix shell built in C++ with support for command parsing, job control, history, I/O redirection, piping, and more. Designed as a deep dive into systems programming, lexical analysis, and shell architecture.
+A Linux shell built in C++ with support for command parsing, job control, history, I/O redirection, piping, and more.
 
 ---------------------
 Features
