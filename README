@@ -1,0 +1,46 @@
+Custom Linux Shell
+=================
+
+A lightweight, feature-rich Unix shell built in C++ with support for command parsing, job control, history, I/O redirection, piping, and more. Designed as a deep dive into systems programming, lexical analysis, and shell architecture.
+
+---------------------
+Features
+---------------------
+
+Command Execution & Parsing:
+- Supports standard shell syntax with:
+  - I/O redirection (`>`, `<`)
+  - Pipelines (`|`)
+  - Background processes (`&`)
+- Implements a custom grammar using Flex and Bison (`shell.l`, `shell.y`)
+
+Shell Functionality:
+- Signal handling: Ctrl-C termination, zombie process reaping
+- Built-in commands: `cd`, `exit`, `source`, and others
+- Subshells and process substitution
+- Startup config file: Automatically reads from `.shellrc` on launch (optional)
+
+Shell Scripting Extensions:
+- Environment variable expansion: `${HOME}`, `${USER}`, etc.
+- Tilde expansion (`~`)
+- Command substitution and nested expressions
+- Escaping and quoted strings
+
+Line Editor:
+- Custom line editor with:
+  - Real-time input editing
+  - Command history navigation
+
+---------------------
+Code Overview
+---------------------
+
+File            | Purpose
+----------------|---------------------------------------------------------------
+shell.l         | Lexer definitions, parsing logic, string/quote handling, expansions
+shell.y         | Grammar rules and syntax parsing
+command.cc      | Core execution logic, built-in command handling, process management
+shell.cc        | Main loop, signal setup, startup configuration
+command.hh      | Command data structures and interfaces
+read-line.c     | Line editor and command history support
+
